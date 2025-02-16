@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar el contenedor detrás del contenido */
+    background-size: cover;
+    background-color: white;
+    /*background-image: url('/static/images/colage2.jpg');*/
+    background-repeat: no-repeat;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(5, 5, 85);
+    font-family: "Audiowide", sans-serif;
+    color: white;
+    overflow: hidden;
+    padding: 8px 5px 8px 5px;
+    font-size: 15px;
+    
+}
+
+.navbar a {
+    font-family: "Audiowide", sans-serif;
+    color: white;
+    text-align: left;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    color:#03e9fa;
+}
+
+.navbar img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 10px;
+}
+
+.navbar-right {
+    margin-left: auto; /* Empuja los elementos hacia la derecha */
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 10px;
+    word-wrap: break-word;
+   
+}
+
+.navbar button {
+    background-color: rgba(3, 233, 250); /* Color verde */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+.navbar button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+    color: white;
+}
+
+/* Contenedor principal de mensajes flash */
+.flash-messages {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 450px;
+    z-index: 1000;
+    text-align: center;
+    animation: fadeOut 10s forwards; /* Aplica la animación */
+  }
+  
+  /* Lista de mensajes */
+  .flash-messages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Mensajes individuales */
+  .flash-messages li {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Categorías de mensajes */
+  .flash-success {
+    background-color: #28a745;
+  }
+  
+  .flash-error {
+    background-color: #dc3545;
+  }
+  
+  .flash-warning {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .flash-info {
+    background-color: #17a2b8;
+  }
+  
+  /* Animación para desaparecer */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+
+.message {
+    margin: 0;
+    font-weight: 600;
+    color: white;
+    padding: 0px;
+}
+
+
+.body-content {
+    padding: 5px;
+    font-family: "Audiowide", sans-serif;
+}
+
+
+
+/* Estilos para asegurar que el contenido no se superponga */
+.container {
+    background-color: gray;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 75px;
+}
+
+
+.login-box {
+    width: 400px;
+    padding: 40px;
+    background-color: transparent;
+    border-radius: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba (0, 0, 0, 1);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: white;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(5, 5, 85);
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 10px 10px 35px; /* Ajusta el padding para dar espacio al icono */
+    color: white;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
+    transition: 0.5s;
+} 
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9fa;
+    font-size: 12px
+}
+
+.login-box .checkbox label{
+    color: white;
+    margin-left: 10px;
+}
+
+.login-box .checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.login-box button[type="submit"] {
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(229, 229, 245);
+    color: rgb(5, 5, 85);
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border-radius: 10px;
+}
+
+.login-box a:hover {
+    background: #03e9fa;
+    color: white;
+    border-radius: 5px;
+    
+}
+
+.login-box a span {
+    position: absolute;
+    display: block;
+} 
+
+
+.container-table {
+    margin-top: 75px;
+   
+}
+
+h3 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+ table {
+    width: 100%;
+}
+
+ th {
+    background-color: rgba(5, 5, 88, 1);
+    color: white;
+}
+
+th, td {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    padding: 12px;
+  }
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+tr:hover {background-color: rgba(3,3,3,0.35);}
+
+.flash-message {
+    text-align: center;
+    color:white;
+}
+
+footer p {
+    color: black;
+    text-align: center;
+    font-size: 12px;
+}
+
+.admin p {
+    color:black;
+    font-size: 12px;
+}
+
+/* Para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        display: flex;
+        justify-content: flex-start;
+        word-wrap: break-word;
+    }
+    
+    .navbar-right {
+        word-break: break-word; /* Quiebra el texto por palabra */
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+        overflow-wrap: break-word; /* Rompe palabras largas si es necesario */
+        text-align: right; 
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between; /* Mantiene los elementos alineados horizontalmente */
+        flex-wrap: nowrap; /* Asegura que todo permanezca en una fila */
+    }
+
+    .navbar-item {
+        font-size: 14px; /* Ajusta el tamaño de los enlaces para pantallas pequeñas */
+    }
+
+    .navbar-right {
+        font-size: 11px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        text-align: right;
+    }
+
+    .navbar-item {
+        display: none; /* Oculta los enlaces */
+    }
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .navbar button {
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+        padding: 8px 16px; /* Ajusta el relleno */
+        word-wrap: break-word;
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .navbar button {
+        width: 68%;
+        font-size: 12px; /* Tamaño de fuente menor para pantallas más pequeñas */
+        padding: 6px 12px;
+        word-wrap: break-word;
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+    }
+    .navbar a, img{
+        margin-left: 2px;
+    }
+
+  }
