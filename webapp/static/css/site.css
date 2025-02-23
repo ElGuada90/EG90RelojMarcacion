@@ -81,8 +81,8 @@ body {
     display: flex;
     flex-direction: column;
     text-align: right;
-    margin-right: 10px;
-    word-wrap: break-word;
+    margin-right: 5px;
+    
    
 }
 
@@ -110,7 +110,7 @@ body {
     max-width: 450px;
     z-index: 1000;
     text-align: center;
-    animation: fadeOut 10s forwards; /* Aplica la animación */
+    animation: fadeOut 12s forwards; /* Aplica la animación */
   }
   
   /* Lista de mensajes */
@@ -177,11 +177,19 @@ body {
     font-family: "Audiowide", sans-serif;
 }
 
+.flash-success {
+    text-align: center; /* Centra el texto del mensaje flash */
+}
+
+.nombre-completo {
+    font-size: 1.2em; /* Ajusta el tamaño de fuente del nombre completo */
+    margin-top: 5px; /* Ajusta el margen superior para separar el nombre de la frase */
+}
 
 
 /* Estilos para asegurar que el contenido no se superponga */
 .container {
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.35);
     width: 100%;
     height: 80vh;
     display: flex;
@@ -205,7 +213,7 @@ body {
 .login-box h2 {
     margin: 0 0 30px;
     padding: 0;
-    color: white;
+    color: rgb(5, 5, 85);
 }
 
 .login-box .user-box {
@@ -222,7 +230,7 @@ body {
 .login-box .user-box input {
     width: 100%;
     padding: 10px 10px 10px 35px; /* Ajusta el padding para dar espacio al icono */
-    color: white;
+    color: rgb(5, 5, 85);
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid white;
@@ -236,7 +244,7 @@ body {
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: white;
+    color: rgb(5, 5, 85);
     pointer-events: none;
     transition: 0.5s;
 } 
@@ -245,12 +253,12 @@ body {
 .login-box .user-box input:valid~label {
     top: -20px;
     left: 0;
-    color: #03e9fa;
+    color: rgb(5, 5, 85);
     font-size: 12px
 }
 
 .login-box .checkbox label{
-    color: white;
+    color: rgb(5, 5, 85);
     margin-left: 10px;
 }
 
@@ -281,9 +289,10 @@ body {
 }
 
 .login-box a:hover {
-    background: #03e9fa;
+    background: rgb(5, 5, 85);
     color: white;
     border-radius: 5px;
+    transition: 0.5s;
     
 }
 
@@ -295,19 +304,27 @@ body {
 
 .container-table {
     margin-top: 75px;
-   
+
 }
+
+
+.container-button{
+    justify-content: right;
+    text-align: right;
+    margin-right: 5px;
+}
+
 
 h3 {
     text-align: center;
     margin-top: 25px;
 }
 
- table {
+table {
     width: 100%;
 }
 
- th {
+th {
     background-color: rgba(5, 5, 88, 1);
     color: white;
 }
@@ -338,6 +355,21 @@ footer p {
     font-size: 12px;
 }
 
+@media only screen and (max-width: 900px) {
+    .navbar-item {
+        font-size: 12px; /* Ajusta el tamaño de los enlaces para pantallas pequeñas */
+    }
+
+    .navbar-right {
+        font-size: 11px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        text-align: right;
+        margin-right: 10px;
+       
+    }
+
+    
+}
+
 /* Para pantallas pequeñas */
 @media only screen and (max-width: 600px) {
     .navbar {
@@ -359,12 +391,14 @@ footer p {
     }
 
     .navbar-item {
-        font-size: 14px; /* Ajusta el tamaño de los enlaces para pantallas pequeñas */
+        font-size: 12px; /* Ajusta el tamaño de los enlaces para pantallas pequeñas */
     }
 
     .navbar-right {
-        font-size: 11px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        font-size: 10px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
         text-align: right;
+        margin-right: 10px;
+        transform: translate(-2%, 3%);
     }
 
     .navbar-item {
@@ -390,8 +424,8 @@ footer p {
         word-wrap: break-word;
         white-space: normal; /* Permite que el texto se ajuste a varias líneas */
     }
-    .navbar a, img{
+    .navbar a, img {
         margin-left: 2px;
     }
-
+    
   }

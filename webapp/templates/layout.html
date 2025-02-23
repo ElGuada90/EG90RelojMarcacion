@@ -17,8 +17,9 @@
         <a href="{{ url_for('login') }}" class="navbar-brand" aria-label="Brand">
             <img src="static/imagenes/icon G2.png" class="navbar-logo" alt="">
         </a>
-        <a href="{{ url_for('marcaciones') }}" class="navbar-item">Gestion</a>
-        <a href="{{ url_for('reloj') }}" class="navbar-item">Marcacion</a>
+        <a href="{{ url_for('usuarios') }}" class="navbar-item">Usuarios</a>
+        <a href="{{ url_for('historialmarcaciones') }}" class="navbar-item">Historial</a>
+        <a href="{{ url_for('registromarcacion') }}" class="navbar-item">Marcacion</a>
         <a href="{{ url_for('logout') }}" class="navbar-item">Salir</a>
         <button id="installButton" type="button" style="display: none;">Instalar App</button>
         <div class="navbar-right">{{ content }}</div>

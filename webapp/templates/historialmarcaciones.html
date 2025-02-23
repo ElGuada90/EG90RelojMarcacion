@@ -25,32 +25,27 @@
     {% endif %}
     {% endwith %}
     <div class="background-image"></div>
-    <div class="container">
-        <div class="row">
-            <h2 class="text-center">Historial de Marcaciones</h2>
-            <table class="table table-bordered table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Usuario</th>
-                        <th>Fecha y Hora</th>
-                        <th>Ubicación</th>
-                        <th>Foto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for marcacion in marcaciones %}
-                    <tr>
-                        <td>{{ marcacion[0] }}</td>
-                        <td>{{ marcacion[1] }}</td>
-                        <td>{{ marcacion[2] }}</td>
-                        <td>{{ marcacion[3] }}</td>
-                        <td><img src="{{ url_for('static', filename='imagenes/' + marcacion[4]) }}" width="100"></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+    <div class="container-table">
+       
+            <h5 class="text-center">Historial de Marcaciones</h5>
+            <table>
+                <tr>
+                    <th>ID Usuario</th>
+                    <th>Fecha y Hora</th>
+                    <th>Nombre</th>  <th>Ubicación</th>
+                    <th>Foto</th>
+                </tr>
+                {% for marcacion in marcaciones %}
+                <tr>
+                    <td>{{ marcacion['ID_Usuario'] }}</td>  
+                    <td>{{ marcacion['FechaHora'] }}</td>
+                    <td>{{ marcacion['Nombre'] }}</td>  
+                    <td>{{ marcacion['Ubicacion'] }}</td>
+                    <td><img src="{{ url_for('static', filename='imagenes/' + marcacion['Foto']) }}" width="100"></td>
+                </tr>
+                {% endfor %}
             </table>
-        </div>
+        
     </div>
     
     <script src="../static/javascript/site.js"></script>
